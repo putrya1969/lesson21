@@ -1,0 +1,7 @@
+C:\Users\D.Putrya\source\repos\Lesson21\AssemblyAnalyzer\bin\Debug\AssemblyAnalyzer.exe.config
+C:\Users\D.Putrya\source\repos\Lesson21\AssemblyAnalyzer\bin\Debug\AssemblyAnalyzer.exe
+C:\Users\D.Putrya\source\repos\Lesson21\AssemblyAnalyzer\bin\Debug\AssemblyAnalyzer.pdb
+C:\Users\D.Putrya\source\repos\Lesson21\AssemblyAnalyzer\obj\Debug\AssemblyAnalyzer.csprojAssemblyReference.cache
+C:\Users\D.Putrya\source\repos\Lesson21\AssemblyAnalyzer\obj\Debug\AssemblyAnalyzer.csproj.CoreCompileInputs.cache
+C:\Users\D.Putrya\source\repos\Lesson21\AssemblyAnalyzer\obj\Debug\AssemblyAnalyzer.exe
+C:\Users\D.Putrya\source\repos\Lesson21\AssemblyAnalyzer\obj\Debug\AssemblyAnalyzer.pdb
