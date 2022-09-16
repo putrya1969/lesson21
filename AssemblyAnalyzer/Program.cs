@@ -26,25 +26,16 @@ namespace AssemblyAnalyzer
                 Console.WriteLine("File is not exist!");
                 return;
             }
-            //string selectedFile = string.Empty;
-            //using (OpenFileDialog ofd = new OpenFileDialog())
-            //{
-            //    ofd.Title = "Select dll or exe file for analysis";
-            //    ofd.Filter = "dll or exe files (*.dll)|*.dll|exe files (*.exe)|*.exe";
-            //    if (ofd.ShowDialog() == DialogResult.OK)
-            //    {
-            //        selectedFile = ofd.FileName;
-            //    }
-            //}
-            var assembly = Assembly.LoadFile(filePath);
-            //var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            //Assembly assembly = null;
-            //StringBuilder sb = new StringBuilder();
-            //foreach (var item in assemblies)
-            //{
-            //    if (item.GetName().Name.Equals("Delegates"))
-            //        assembly = Assembly.Load(item.GetName().Name);
-            //}
+            Assembly assembly = null;
+            try
+            {
+                assembly = Assembly.LoadFile(filePath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Load assembly error\n{ex.Message}\nApplication closed");
+                return;
+            }
             if (assembly == null)
             {
                 Console.WriteLine("assembly 'Delegates' not find");
@@ -63,7 +54,6 @@ namespace AssemblyAnalyzer
                     $"Class '{type.Name}' has is following methods:");
                 foreach (var methodInfo in methodsInfo)
                 {
-                    //sb.AppendLine(new string('-', 50));
                     if (methodInfo.IsConstructor) sb.Append(" ctor");
                     if (methodInfo.IsAbstract) sb.Append(" abstract");
                     if (methodInfo.IsPublic) sb.Append(" public");
@@ -88,9 +78,6 @@ namespace AssemblyAnalyzer
             Regex containsABadCharacter = new Regex("["
                   + Regex.Escape(new string(System.IO.Path.GetInvalidPathChars())) + "]");
             if (containsABadCharacter.IsMatch(testName)) { return false; };
-
-            // other checks for UNC, drive-path format, etc
-
             return true;
         }
     }
