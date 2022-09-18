@@ -82,3 +82,4 @@ namespace AssemblyAnalyzer
         }
     }
 }
+//checked
